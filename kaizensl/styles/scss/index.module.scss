@@ -1,0 +1,133 @@
+$base-color: #DC5942;
+$primary-black: #1b1b1b;
+$border-dark: rgba($base-color, 0.88);
+
+//home page styles
+h1{
+    font-size: 2.5rem;
+}
+
+.form {
+    background-color: rgb(255, 255, 255);
+    padding: 2rem 3rem;
+    display: flex;
+    z-index: 2;
+    flex-direction: row;
+
+
+    .input,
+    .textarea {
+        // padding: .5rem;
+        width: 100%;
+        height: 2.5rem;
+        outline: none;
+        border: .05rem solid $primary-black;
+        border-radius: .3rem;
+        font-size: 0.7rem;
+        margin-bottom: 1.2rem;
+
+    }
+
+    label {
+        font-size: .9rem;
+        font-weight: 600;
+        margin: .5rem 0;
+    
+    }
+}
+
+.body {
+    height: 100vh;
+    background-image:  linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(0, 0, 0, 0.73)),
+    url('/Images/stretch-2.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+}
+
+.button {
+    padding: .5rem;
+    transition: 300ms;
+    background-color: $primary-black;
+
+    &-primary {
+        @extend .button;
+        background-color: $primary-black;
+        color: white;
+        width: 100%;
+        margin: 0 0rem 2rem 0rem;
+
+        &:hover {
+            background-color: $base-color;
+        }
+    }
+
+    &-secondary {
+        @extend .button;
+        background-color: $base-color;
+        color: white;
+        font-weight: 500;
+        width: auto;
+        padding: 0 4rem;
+        text-transform: uppercase;
+        margin: 0 ;
+        height: 2.5rem;
+
+        &:hover {
+            background-color:$primary-black;
+        }
+    }
+}
+
+
+// inner pages styles
+.header {
+    height: 5rem;
+    // background-color: rgba(0, 0, 0, 0.651);
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    gap:2rem;
+    padding: 2rem 2rem;
+    background-color: #DC5942;
+    z-index: 999;
+}
+
+
+@media screen and (max-width: 768px){
+    .button {
+    
+        &-secondary {
+            @extend .button;
+           height: 3rem !important;
+        }
+    }
+
+    h1{
+        font-size: 1.5rem !important;
+    }
+
+    .header {
+        padding: 2rem 1rem;
+    }
+    
+}
+
+
